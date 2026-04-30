@@ -19,19 +19,22 @@ int IN4 = 12; //6 par thi
 int S1 = 11;
 
 //speed
-int Speed_m = 160;
-int Speed_l = 100;
-int Speed_h = 255;
+int Speed_m1 = 90;
+int Speed_m2 = 100;
+int Speed_l1 = 160;
+int Speed_l2 = 170;
+int Speed_h1 = 245;
+int Speed_h1 = 255;
 
 //SPEED SET OF TWO MOTOTR
-int M1_s = Speed_m;
-int M2_s = Speed_m;
+int M1_s = Speed_m1;
+int M2_s = Speed_m2;
 
 void forward() {
   digitalWrite(IN1, HIGH);
   digitalWrite(IN2, LOW);
-  analogWrite(ENA, 90);
-  analogWrite(ENB, 100);
+  analogWrite(ENA, Speed_l1);
+  analogWrite(ENB, Speed_l2);
   digitalWrite(IN3, HIGH);
   digitalWrite(IN4, LOW);
   Serial.println("Forward");
@@ -40,8 +43,8 @@ void forward() {
 void backward() {
   digitalWrite(IN1, LOW);
   digitalWrite(IN2, HIGH);
-  analogWrite(ENA, 100);
-  analogWrite(ENB, 100);
+  analogWrite(ENA, Speed_l1);
+  analogWrite(ENB, Speed_l2);
   digitalWrite(IN3, LOW);
   digitalWrite(IN4, HIGH);
   Serial.println("Backward");
